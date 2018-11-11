@@ -1,4 +1,4 @@
-package basic
+package basic.fullsearch
 
 object Fact extends App {
   import scala.io.StdIn._
@@ -15,4 +15,3 @@ object Fact extends App {
   }
 
 }
-

@@ -1,7 +1,6 @@
-package basic
+package basic.fullsearch
 
 import scala.collection.mutable
-
 
 object Stack extends App {
 

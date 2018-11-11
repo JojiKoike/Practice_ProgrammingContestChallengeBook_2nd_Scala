@@ -1,4 +1,4 @@
-package basic
+package basic.fullsearch
 
 import scala.collection.mutable
 
