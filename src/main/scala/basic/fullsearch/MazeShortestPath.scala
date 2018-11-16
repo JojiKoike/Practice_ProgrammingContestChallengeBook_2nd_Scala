@@ -41,6 +41,7 @@ object MazeShortestPath extends App {
   printf("Distance : %d\n", bfs())
 
   def bfs(): Int = {
+    case class Pair(x: Int, y: Int)
     val queue = new mutable.Queue[Pair]
 
     // Initialize Distance Table
@@ -54,7 +55,7 @@ object MazeShortestPath extends App {
     }
 
     // Enqueue Starting Point
-    queue.enqueue(new Pair(sx, sy))
+    queue.enqueue(Pair(sx, sy))
     distance(sy)(sx) = 0
 
     while (queue.nonEmpty) {
@@ -66,7 +67,7 @@ object MazeShortestPath extends App {
           val nx = p.x + dx(i)
           val ny = p.y + dy(i)
           if (0 <= nx && nx < m && 0 <= ny && ny < n && maze(ny)(nx) != "#" && distance(ny)(nx) == INF) {
-            queue.enqueue(new Pair(nx, ny))
+            queue.enqueue(Pair(nx, ny))
             distance(ny)(nx) = distance(p.y)(p.x) + 1
           }
         }
@@ -76,7 +77,3 @@ object MazeShortestPath extends App {
   }
 }
 
-class Pair(_x: Int, _y: Int) {
-  var x = _x
-  var y = _y
-}
